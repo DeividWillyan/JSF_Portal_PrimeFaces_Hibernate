@@ -5,6 +5,5 @@
 	- Jersey 2.25
 	- MySQL Connector/J 6.0.6
 	- JSF 2.3
-	- Servlet 3.0.1
-	- TESTE 
+	- Servlet 3.0.1 
 	
