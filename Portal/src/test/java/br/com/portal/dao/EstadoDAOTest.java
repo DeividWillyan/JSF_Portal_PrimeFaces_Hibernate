@@ -20,13 +20,16 @@ public class EstadoDAOTest {
 
 		// System.out.println(dao.buscarPorCodigo(7L).getNome());
 
-		estado.setIdEstado(dao.buscarPorCodigo(1L).getIdEstado());
-		estado.setNome("Santa Catarina");
-		estado.setSigla("SC");
-		dao.editar(estado);
+//		estado.setIdEstado(dao.buscarPorCodigo(1L).getIdEstado());
+//		estado.setNome("Santa Catarina");
+//		estado.setSigla("SC");
+//		dao.editar(estado);
+//
+//		System.out.println(dao.buscarPorCodigo(1L).getNome());
 
-		System.out.println(dao.buscarPorCodigo(1L).getNome());
-
+		dao.excluir(6L);
+		
+		
 		HibernateUtil.shutdown();
 
 	}

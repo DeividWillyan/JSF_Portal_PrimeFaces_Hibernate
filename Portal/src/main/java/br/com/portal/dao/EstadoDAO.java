@@ -33,7 +33,25 @@ public class EstadoDAO {
 	}
 
 	public void excluir(Long codigo) {
-		
+
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		Estado estado = null;
+
+		try {
+			estado = buscarPorCodigo(codigo);
+			transaction = session.beginTransaction();
+			session.delete(estado);
+			transaction.commit();
+		} catch (RuntimeException e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			throw e;
+		} finally {
+			session.close();
+		}
+
 	}
 
 	public void editar(Estado estado) {
