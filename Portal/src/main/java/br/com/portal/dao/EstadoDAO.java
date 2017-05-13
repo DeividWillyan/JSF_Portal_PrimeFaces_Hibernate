@@ -33,7 +33,7 @@ public class EstadoDAO {
 	}
 
 	public void excluir(Long codigo) {
-
+		
 	}
 
 	public void editar(Estado estado) {
@@ -57,7 +57,18 @@ public class EstadoDAO {
 	}
 
 	public Estado buscarPorCodigo(Long codigo) {
+
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Estado estado = null;
+
+		try {
+			Query query = session.createQuery("FROM estado WHERE id = " + codigo);
+			estado = (Estado) query.getSingleResult();
+		} catch (RuntimeException e) {
+			throw e;
+		} finally {
+			session.close();
+		}
 		return estado;
 	}
 
