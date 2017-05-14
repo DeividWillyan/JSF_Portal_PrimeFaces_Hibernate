@@ -44,23 +44,27 @@
 
 		</p:dataTable>
 
+
 		<h:form id="form">
-			<h:panelGrid columns="2">
+		
+			<div style="margin-left: 25%">
+				<h:panelGrid columns="2">
 
-				<p:outputLabel value="ID: " />
-				<p:inputText value="#{estadoBean.estado.idEstado}" />
+					<p:outputLabel value="ID: " />
+					<p:inputText value="#{estadoBean.estado.idEstado}" />
 
-				<p:outputLabel value="Estado: " />
-				<p:inputText value="#{estadoBean.estado.nome}" />
+					<p:outputLabel value="Estado: " />
+					<p:inputText value="#{estadoBean.estado.nome}" />
 
-				<p:outputLabel value="Sigla: " />
-				<p:inputText value="#{estadoBean.estado.sigla}" />
+					<p:outputLabel value="Sigla: " />
+					<p:inputText value="#{estadoBean.estado.sigla}" />
 
-			</h:panelGrid>
+				</h:panelGrid>
+			</div>
 
 			<div style="border: 1px solid #CCC; margin-top: 20px;">
 				<h:panelGrid columns="4" style="margin-left:20%">
-				
+
 					<p:commandButton value="novo" actionListener="#{estadoBean.novo()}"
 						update=":table :form" />
 
@@ -69,7 +73,6 @@
 
 					<p:commandButton value="Editar"
 						actionListener="#{estadoBean.editar()}" update=":table :form" />
-
 					<p:commandButton value="Deletar"
 						actionListener="#{estadoBean.deletar()}" update=":table :form" />
 
