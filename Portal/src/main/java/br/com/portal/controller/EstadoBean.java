@@ -52,4 +52,34 @@ public class EstadoBean {
 		}
 	}
 
+	public void editar() {
+		try {
+
+			Estados dao = new Estados();
+			dao.editar(estado);
+
+			novo();
+
+			System.out.println("Estado Editado com sucesso!");
+		} catch (RuntimeException ex) {
+			System.out.println("Erro ao Editar estado.");
+			ex.printStackTrace();
+		}
+	}
+
+	public void deletar() {
+		try {
+
+			Estados dao = new Estados();
+			dao.excluir(estado.getIdEstado());
+
+			novo();
+
+			System.out.println("Estado Excluido com sucesso!");
+		} catch (RuntimeException ex) {
+			System.out.println("Erro ao Excluir o estado.");
+			ex.printStackTrace();
+		}
+	}
+
 }

@@ -15,37 +15,69 @@
 
 <h:body>
 
-	<p:dataTable id="table" var="estado" value="#{estadoBean.estados}"
-		style="width: 50%; margin-bottom: 20px;">
+	<div style="margin-left: 25%; width: 50%">
 
-		<p:column headerText="ID">
-			<h:outputText value="#{estado.idEstado}" />
-		</p:column>
+		<h1 style="border-bottom: 1px solid black">Prototipo Cad Estados</h1>
 
-		<p:column headerText="NOME">
-			<h:outputText value="#{estado.nome}" />
-		</p:column>
+		<p:dataTable id="table" var="estado" paginator="true"
+			paginatorPosition="bottom" rows="5" value="#{estadoBean.estados}"
+			style="margin-bottom: 20px;">
 
-		<p:column headerText="SIGLA">
-			<h:outputText value="#{estado.sigla}" />
-		</p:column>
+			<p:column headerText="ID">
+				<h:outputText value="#{estado.idEstado}" />
+			</p:column>
 
-	</p:dataTable>
+			<p:column headerText="NOME">
+				<h:outputText value="#{estado.nome}" />
+			</p:column>
 
-	<h:form id="form">
-		<h:panelGrid columns="2">
-			<p:outputLabel value="Estado: " />
-			<p:inputText value="#{estadoBean.estado.nome}" />
+			<p:column headerText="SIGLA">
+				<h:outputText value="#{estado.sigla}" />
+			</p:column>
 
-			<p:outputLabel value="Sigla: " />
-			<p:inputText value="#{estadoBean.estado.sigla}" />
+			<p:column style="width:43px;">
+				<p:commandButton icon="ui-icon-search" update=":form">
+					<f:setPropertyActionListener value="#{estado}"
+						target="#{estadoBean.estado}" />
+				</p:commandButton>
+			</p:column>
 
-			<p:spacer />
-			<p:commandButton value="Cadastrar"
-				actionListener="#{estadoBean.salvar()}" update=":table :form" />
-		</h:panelGrid>
-	</h:form>
+		</p:dataTable>
 
+		<h:form id="form">
+			<h:panelGrid columns="2">
+
+				<p:outputLabel value="ID: " />
+				<p:inputText value="#{estadoBean.estado.idEstado}" />
+
+				<p:outputLabel value="Estado: " />
+				<p:inputText value="#{estadoBean.estado.nome}" />
+
+				<p:outputLabel value="Sigla: " />
+				<p:inputText value="#{estadoBean.estado.sigla}" />
+
+			</h:panelGrid>
+
+			<div style="border: 1px solid #CCC; margin-top: 20px;">
+				<h:panelGrid columns="4" style="margin-left:20%">
+				
+					<p:commandButton value="novo" actionListener="#{estadoBean.novo()}"
+						update=":table :form" />
+
+					<p:commandButton value="Cadastrar"
+						actionListener="#{estadoBean.salvar()}" update=":table :form" />
+
+					<p:commandButton value="Editar"
+						actionListener="#{estadoBean.editar()}" update=":table :form" />
+
+					<p:commandButton value="Deletar"
+						actionListener="#{estadoBean.deletar()}" update=":table :form" />
+
+				</h:panelGrid>
+			</div>
+
+		</h:form>
+	</div>
 
 
 </h:body>
