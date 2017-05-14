@@ -1,6 +1,7 @@
 package br.com.portal.dao;
 
 import br.com.portal.model.Estado;
+import br.com.portal.repository.Estados;
 import br.com.portal.util.HibernateUtil;
 
 public class EstadoDAOTest {
@@ -11,7 +12,7 @@ public class EstadoDAOTest {
 //		estado.setNome("Rio de Janeiro");
 //		estado.setSigla("RJ");
 
-		EstadoDAO dao = new EstadoDAO();
+		Estados dao = new Estados();
 		// dao.salvar(estado);
 		//
 		 for(Estado e : dao.listar()) {

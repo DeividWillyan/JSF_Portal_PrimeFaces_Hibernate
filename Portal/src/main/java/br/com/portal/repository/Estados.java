@@ -1,4 +1,4 @@
-package br.com.portal.dao;
+package br.com.portal.repository;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 import br.com.portal.model.Estado;
 import br.com.portal.util.HibernateUtil;
 
-public class EstadoDAO {
+public class Estados {
 
 	public void salvar(Estado estado) {
 
