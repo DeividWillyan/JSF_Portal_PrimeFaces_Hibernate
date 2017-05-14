@@ -8,15 +8,15 @@ public class EstadoDAOTest {
 	public static void main(String[] args) {
 
 		Estado estado = new Estado();
-		estado.setNome("Rio de Janeiro");
-		estado.setSigla("RJ");
+//		estado.setNome("Rio de Janeiro");
+//		estado.setSigla("RJ");
 
 		EstadoDAO dao = new EstadoDAO();
 		// dao.salvar(estado);
 		//
-		// for(Estado e : dao.listar()) {
-		// System.out.println(e.getNome());
-		// }
+		 for(Estado e : dao.listar()) {
+		 System.out.println(e.getNome());
+		 }
 
 		// System.out.println(dao.buscarPorCodigo(7L).getNome());
 
@@ -27,7 +27,7 @@ public class EstadoDAOTest {
 //
 //		System.out.println(dao.buscarPorCodigo(1L).getNome());
 
-		dao.excluir(6L);
+//		dao.excluir(6L);
 		
 		
 		HibernateUtil.shutdown();

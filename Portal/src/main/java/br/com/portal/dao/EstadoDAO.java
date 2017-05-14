@@ -80,8 +80,7 @@ public class EstadoDAO {
 		Estado estado = null;
 
 		try {
-			Query query = session.createQuery("FROM estado WHERE id = " + codigo);
-			estado = (Estado) query.getSingleResult();
+			estado = (Estado) session.createQuery("FROM estado WHERE id = " + codigo).getSingleResult();
 		} catch (RuntimeException e) {
 			throw e;
 		} finally {
@@ -96,8 +95,7 @@ public class EstadoDAO {
 		List<Estado> itens = null;
 
 		try {
-			Query query = session.createQuery("FROM estado");
-			itens = query.getResultList();
+			itens = session.createQuery("FROM estado", Estado.class).list();
 		} catch (RuntimeException e) {
 			throw e;
 		} finally {
