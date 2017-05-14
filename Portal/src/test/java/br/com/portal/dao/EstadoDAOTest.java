@@ -9,29 +9,28 @@ public class EstadoDAOTest {
 	public static void main(String[] args) {
 
 		Estado estado = new Estado();
-//		estado.setNome("Rio de Janeiro");
-//		estado.setSigla("RJ");
+		 estado.setNome("Rio de Janeiro");
+		 estado.setSigla("RJ");
 
 		Estados dao = new Estados();
-		// dao.salvar(estado);
+//		 dao.salvar(estado);
 		//
-		 for(Estado e : dao.listar()) {
-		 System.out.println(e.getNome());
-		 }
+//		for (Estado e : dao.listar()) {
+//			System.out.println(e.getNome());
+//		}
 
-		// System.out.println(dao.buscarPorCodigo(7L).getNome());
+//		 System.out.println(dao.buscarPorCodigo(2L).getNome());
 
-//		estado.setIdEstado(dao.buscarPorCodigo(1L).getIdEstado());
-//		estado.setNome("Santa Catarina");
-//		estado.setSigla("SC");
-//		dao.editar(estado);
-//
-//		System.out.println(dao.buscarPorCodigo(1L).getNome());
+//		 estado.setIdEstado(dao.buscarPorCodigo(1L).getIdEstado());
+//		 estado.setNome("Santa Catarina");
+//		 estado.setSigla("SC");
+//		 dao.editar(estado);
+		//
+//		 System.out.println(dao.buscarPorCodigo(2L).getNome());
 
-//		dao.excluir(6L);
-		
-		
-		HibernateUtil.shutdown();
+//		 dao.excluir(2L);
+
+		HibernateUtil.close();
 
 	}
 

@@ -66,8 +66,6 @@ public class create {
 		} finally {
 			session.close();
 		}
-		HibernateUtil.shutdown();
-
 	}
 
 }
