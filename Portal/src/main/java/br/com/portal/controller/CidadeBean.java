@@ -46,4 +46,16 @@ public class CidadeBean {
 		cidades = new Cidades().listar();
 	}
 
+	public void salvar() {
+
+	}
+
+	public void editar() {
+
+	}
+
+	public void deletar() {
+
+	}
+
 }
