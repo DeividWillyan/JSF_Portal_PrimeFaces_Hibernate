@@ -60,24 +60,45 @@ public class CidadeBean {
 
 	public void salvar() {
 		try {
-
 			Cidades dao = new Cidades();
 			dao.salvar(cidade);
 
 			novo();
 
-			FacesUtil.msgSucesso("Estado salvo com sucesso!");
+			FacesUtil.msgSucesso("Cidade salvo com sucesso!");
 		} catch (RuntimeException ex) {
-			FacesUtil.msgErro("Erro ao salvar estado.");
+			FacesUtil.msgErro("Erro ao salvar a Cidade.");
 			ex.printStackTrace();
 		}
 	}
 
 	public void editar() {
+		try {
+			Cidades dao = new Cidades();
+			dao.editar(cidade);
+
+			novo();
+
+			FacesUtil.msgSucesso("Cidade editada com sucesso!");
+		} catch (RuntimeException ex) {
+			FacesUtil.msgErro("Erro ao editar cidade.");
+			ex.printStackTrace();
+		}
 
 	}
 
 	public void deletar() {
+		try {
+			Cidades dao = new Cidades();
+			dao.excluir(cidade.getIdCidade());
+
+			novo();
+
+			FacesUtil.msgSucesso("Cidade exluida com sucesso!");
+		} catch (RuntimeException ex) {
+			FacesUtil.msgErro("Erro ao excluir a cidade.");
+			ex.printStackTrace();
+		}
 
 	}
 
