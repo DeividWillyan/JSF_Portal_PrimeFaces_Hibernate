@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 
 import br.com.portal.model.Estado;
 import br.com.portal.repository.Estados;
+import br.com.portal.util.FacesUtil;
 
 @ManagedBean
 public class EstadoBean {
@@ -32,8 +33,7 @@ public class EstadoBean {
 
 	@PostConstruct
 	public void novo() {
-		Estados e = new Estados();
-		estados = e.listar();
+		estados = new Estados().listar();
 		estado = new Estado();
 	}
 
@@ -44,9 +44,9 @@ public class EstadoBean {
 
 			novo();
 
-			System.out.println("Estado salvo com sucesso!");
+			FacesUtil.msgSucesso("Estado salvo com sucesso!");
 		} catch (RuntimeException ex) {
-			System.out.println("Erro ao salvar estado.");
+			FacesUtil.msgErro("Erro ao salvar estado.");
 			ex.printStackTrace();
 		}
 	}
@@ -58,9 +58,9 @@ public class EstadoBean {
 
 			novo();
 
-			System.out.println("Estado Editado com sucesso!");
+			FacesUtil.msgSucesso("Estado editado com sucesso!");
 		} catch (RuntimeException ex) {
-			System.out.println("Erro ao Editar estado.");
+			FacesUtil.msgErro("Erro ao salvar estado.");
 			ex.printStackTrace();
 		}
 	}
@@ -72,9 +72,9 @@ public class EstadoBean {
 
 			novo();
 
-			System.out.println("Estado Excluido com sucesso!");
+			FacesUtil.msgSucesso("Estado Excluido com sucesso!");
 		} catch (RuntimeException ex) {
-			System.out.println("Erro ao Excluir o estado.");
+			FacesUtil.msgErro("Erro ao salvar estado.");
 			ex.printStackTrace();
 		}
 	}
