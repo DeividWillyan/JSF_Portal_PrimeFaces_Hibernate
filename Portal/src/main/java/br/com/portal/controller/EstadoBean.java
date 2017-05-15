@@ -39,7 +39,6 @@ public class EstadoBean {
 
 	public void salvar() {
 		try {
-
 			Estados dao = new Estados();
 			dao.salvar(estado);
 
@@ -54,7 +53,6 @@ public class EstadoBean {
 
 	public void editar() {
 		try {
-
 			Estados dao = new Estados();
 			dao.editar(estado);
 
@@ -69,7 +67,6 @@ public class EstadoBean {
 
 	public void deletar() {
 		try {
-
 			Estados dao = new Estados();
 			dao.excluir(estado.getIdEstado());
 
