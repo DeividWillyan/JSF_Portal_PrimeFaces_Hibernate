@@ -116,7 +116,7 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Cidade: " />
-					<p:selectOneMenu filter="true" value="#{pessoaBean.pessoa.cidade}">
+					<p:selectOneMenu converter="cidadeConverter" filter="true" value="#{pessoaBean.pessoa.cidade}">
 						<f:selectItem itemLabel="Selecione uma cidade" />
 						<f:selectItems value="#{pessoaBean.cidades}" var="cidade"
 							itemValue="#{cidade}" itemLabel="#{cidade.nome}" />
@@ -132,16 +132,16 @@
 			<div style="border: 1px solid #CCC; margin-top: 20px;">
 				<h:panelGrid columns="4" style="margin-left:20%">
 
-					<p:commandButton value="novo" actionListener="#{estadoBean.novo()}"
+					<p:commandButton value="novo" actionListener="#{pessoaBean.novo()}"
 						update=":table :form" />
 
 					<p:commandButton value="Cadastrar"
-						actionListener="#{estadoBean.salvar()}" update=":table :form" />
+						actionListener="#{pessoaBean.salvar()}" update=":table :form" />
 
 					<p:commandButton value="Editar"
-						actionListener="#{estadoBean.editar()}" update=":table :form" />
+						actionListener="#{pessoaBean.editar()}" update=":table :form" />
 					<p:commandButton value="Deletar"
-						actionListener="#{estadoBean.deletar()}" update=":table :form" />
+						actionListener="#{pessoaBean.deletar()}" update=":table :form" />
 
 				</h:panelGrid>
 			</div>
