@@ -53,8 +53,7 @@ public class PessoaBean {
 
 	}
 
-	public void salver() {
-
+	public void salvar() {
 		try {
 			Pessoas dao = new Pessoas();
 			dao.salvar(pessoa);

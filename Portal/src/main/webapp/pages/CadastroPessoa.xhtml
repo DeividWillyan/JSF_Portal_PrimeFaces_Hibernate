@@ -43,9 +43,11 @@
 			</p:column>
 
 			<!-- Fazer converter do calender -->
-			<!-- 			<p:column headerText="dtNasc"> -->
-			<!-- 				<h:outputText value="#{pessoa.dtNasc}" /> -->
-			<!-- 			</p:column> -->
+			<p:column headerText="dtNasc">
+				<h:outputText value="#{pessoa.dtNasc.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00" />
+				</h:outputText>
+			</p:column>
 
 			<p:column headerText="CPF">
 				<h:outputText value="#{pessoa.cpf}" />
@@ -98,6 +100,9 @@
 					<p:outputLabel value="Email: " />
 					<p:inputText value="#{pessoaBean.pessoa.email}" />
 
+					<p:outputLabel value="Data Nascimento: " />
+					<p:calendar value="#{pessoaBean.pessoa.dtNasc.time}" maskAutoClear="true" />
+
 					<p:outputLabel value="CPF: " />
 					<p:inputText value="#{pessoaBean.pessoa.cpf}" />
 
@@ -116,7 +121,8 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Cidade: " />
-					<p:selectOneMenu converter="cidadeConverter" filter="true" value="#{pessoaBean.pessoa.cidade}">
+					<p:selectOneMenu converter="cidadeConverter" filter="true"
+						value="#{pessoaBean.pessoa.cidade}">
 						<f:selectItem itemLabel="Selecione uma cidade" />
 						<f:selectItems value="#{pessoaBean.cidades}" var="cidade"
 							itemValue="#{cidade}" itemLabel="#{cidade.nome}" />

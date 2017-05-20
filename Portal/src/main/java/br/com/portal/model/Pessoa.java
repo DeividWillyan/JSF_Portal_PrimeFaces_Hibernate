@@ -30,7 +30,7 @@ public class Pessoa {
 
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private Calendar dtNasc;
+	private Calendar dtNasc = Calendar.getInstance();
 
 	@Column(nullable = false, length = 15)
 	private String cpf;
@@ -83,6 +83,10 @@ public class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	// public String getDtNascString() {
+	// return new datasConverterUtil().dateConverter(dtNasc);
+	// }
 
 	public Calendar getDtNasc() {
 		return dtNasc;
