@@ -14,8 +14,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import br.com.portal.util.datasConverterUtil;
-
 @Entity(name = "usuario")
 public class Usuario {
 
@@ -35,7 +33,7 @@ public class Usuario {
 
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private Calendar dtCriacao;
+	private Calendar dtCriacao = Calendar.getInstance();
 
 	@Enumerated(EnumType.STRING)
 	private Permissoes permissoes;
@@ -64,8 +62,8 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public String getDtCriacao() {
-		return new datasConverterUtil().dateConverter(dtCriacao);
+	public Calendar getDtCriacao() {
+		return dtCriacao;
 	}
 
 	public void setDtCriacao(Calendar dtCriacao) {
