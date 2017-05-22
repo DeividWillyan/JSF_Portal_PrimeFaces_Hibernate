@@ -24,7 +24,7 @@
 				<p:outputLabel value="#{usuario.idUsuario}" />
 			</p:column>
 
-			<p:column headerText="USUARIO">
+			<p:column headerText="USUARIO" style="width:20%">
 				<p:outputLabel value="#{usuario.usuario}" />
 			</p:column>
 
@@ -32,12 +32,12 @@
 				<p:outputLabel value="#{usuario.password}" />
 			</p:column>
 
-			<p:column headerText="PERMISSAO">
+			<p:column headerText="PERMISSAO" style="">
 				<p:outputLabel
 					value="(#{usuario.permissoes.level}) #{usuario.permissoes.permissao}" />
 			</p:column>
 
-			<p:column>
+			<p:column style="width:12%">
 				<p:commandButton icon="ui-icon-pencil" />
 			</p:column>
 
