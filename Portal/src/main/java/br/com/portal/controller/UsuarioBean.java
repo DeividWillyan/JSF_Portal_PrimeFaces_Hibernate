@@ -49,6 +49,17 @@ public class UsuarioBean {
 		usuario = new Usuario();
 	}
 
+	public void listaUsuarios() {
+		try {
+			Usuarios dao = new Usuarios();
+			usuarios = dao.listar();
+
+		} catch (RuntimeException e) {
+			FacesUtil.msgErro("Erro ao listar os usuarios");
+			e.printStackTrace();
+		}
+	}
+
 	public void salvar() {
 		try {
 			Usuarios dao = new Usuarios();
@@ -61,13 +72,34 @@ public class UsuarioBean {
 			FacesUtil.msgErro("Erro ao salver o usuario");
 			e.printStackTrace();
 		}
-	
 	}
 
 	public void editar() {
+		try {
+			Usuarios dao = new Usuarios();
+			dao.editar(usuario);
+
+			novo();
+
+			FacesUtil.msgSucesso("Usuario editado com sucesso!");
+		} catch (RuntimeException e) {
+			FacesUtil.msgErro("Erro ao editar o usuario");
+			e.printStackTrace();
+		}
 	}
 
 	public void deletar() {
+		try {
+			Usuarios dao = new Usuarios();
+			dao.excluir(usuario.getIdUsuario());
+
+			novo();
+
+			FacesUtil.msgSucesso("Usuario excluido com sucesso!");
+		} catch (RuntimeException e) {
+			FacesUtil.msgErro("Erro ao excluir o usuario");
+			e.printStackTrace();
+		}
 	}
 
 }
