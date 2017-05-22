@@ -31,7 +31,7 @@ public class Usuario {
 	@Column(nullable = false, length = 40)
 	private String password;
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable = false)
 	private Calendar dtCriacao = Calendar.getInstance();
 
