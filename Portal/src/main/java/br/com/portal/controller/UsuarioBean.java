@@ -47,13 +47,14 @@ public class UsuarioBean {
 	@PostConstruct
 	public void novo() {
 		usuario = new Usuario();
+		listaUsuarios();
 	}
-
+	
 	public void listaUsuarios() {
 		try {
 			Usuarios dao = new Usuarios();
 			usuarios = dao.listar();
-
+			
 		} catch (RuntimeException e) {
 			FacesUtil.msgErro("Erro ao listar os usuarios");
 			e.printStackTrace();
