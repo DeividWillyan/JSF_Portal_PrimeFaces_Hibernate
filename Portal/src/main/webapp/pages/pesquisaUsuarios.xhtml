@@ -38,8 +38,7 @@
 			</p:column>
 
 			<p:column style="width:10%">
-				<p:commandButton icon="ui-icon-pencil" update="frm"
-					actionListener="#{usuarioBean.saida(usuario)}">
+				<p:commandButton icon="ui-icon-pencil" update=":frm">
 					<f:setPropertyActionListener value="#{usuario}"
 						target="#{usuarioBean.usuario}" />
 				</p:commandButton>
@@ -56,8 +55,10 @@
 
 				<p:outputLabel value="Usuario: " />
 				<p:inputText value="#{usuarioBean.usuario.usuario}" />
+
 				<p:outputLabel value="Senha: " />
 				<p:inputText value="#{usuarioBean.usuario.password}" />
+
 				<p:outputLabel value="Permissão: " />
 				<p:selectOneMenu value="#{usuarioBean.usuario.permissoes}">
 					<f:selectItem itemLabel="Selecione uma opção." />
@@ -66,12 +67,23 @@
 				</p:selectOneMenu>
 
 
+				<p:outputLabel value="Pessoa: " />
+				<p:selectOneMenu value="#{usuarioBean.usuario.pessoa}" converter="pessoaConverter">
+					<f:selectItem itemLabel="Selecione uma pessoa" itemDisabled="true" />
+					<f:selectItems value="#{usuarioBean.pessoas}" var="pessoa" 
+					itemLabel="#{pessoa.nome}" itemValue="#{pessoa}"/>
+				</p:selectOneMenu>
+
+
 				<p:spacer />
 				<h:panelGroup style="margin-left: 20%">
-					<p:commandButton icon="ui-icon-plus" />
-					<p:commandButton icon="ui-icon-trash" />
-					<p:commandButton icon="ui-icon-disk" />
+					<p:commandButton icon="ui-icon-plus" actionListener="#{usuarioBean.editar()}"/>
+					<p:commandButton icon="ui-icon-trash" actionListener="#{usuarioBean.deletar()}"/>
+					<p:commandButton icon="ui-icon-disk" actionListener="#{usuarioBean.salvar()}"/>
 				</h:panelGroup>
+
+				<p:spacer />
+				<h:inputHidden value="#{usuarioBean.usuario.idUsuario}"/>
 
 			</h:panelGrid>
 		</h:form>
