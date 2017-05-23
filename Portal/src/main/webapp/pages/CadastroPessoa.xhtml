@@ -104,7 +104,7 @@
 					<p:calendar value="#{pessoaBean.pessoa.dtNasc.time}" maskAutoClear="true" />
 
 					<p:outputLabel value="CPF: " />
-					<p:inputText value="#{pessoaBean.pessoa.cpf}" />
+					<p:inputMask mask="999.999.999-99" value="#{pessoaBean.pessoa.cpf}"/>
 
 					<p:outputLabel value="Telefone: " />
 					<p:inputText value="#{pessoaBean.pessoa.telefone}" />

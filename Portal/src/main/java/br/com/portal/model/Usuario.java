@@ -111,4 +111,10 @@ public class Usuario {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Usuario [idUsuario=" + idUsuario + ", usuario=" + usuario + ", password="
+				+ password + ", permissoes=" + permissoes + "]";
+	}
+
 }

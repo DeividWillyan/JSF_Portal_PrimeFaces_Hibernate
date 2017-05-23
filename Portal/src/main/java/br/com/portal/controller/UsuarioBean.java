@@ -103,4 +103,12 @@ public class UsuarioBean {
 		}
 	}
 
+	public void saida(Usuario u) {
+		usuario = u;
+		System.out.println(usuario.toString());
+		
+	}
+	
+	
+	
 }
